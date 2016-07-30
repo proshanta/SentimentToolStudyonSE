@@ -1,0 +1,142 @@
+Reviewer #1: This article investigates the use of sentiment analysis tools on open source projects. The primary goal is to evaluate the ability of existing tools, trained on domains other than software engineering, to produce consistent and reliable results.
+
+This is an extremely important topic and worthy of publication. However, the current article needs to work through some issues highlighted below. Finally, while some major issues are noted, there are clear actions that authors can take address them.
+
+## Major Issues
+
+### MA1
+
+A primary difference between two tools investigated is that one tool, sentistrength, systematically produces more *conservative* results. That is, it is more likely to overrepresent neutral results rather than a predicting positive and negative classes. This is confirmed by empirical results in the studies: Sentistrength tends to produce much more neutral results across all studies.
+
+Often this simple fact can explain most results. For example, in the first replication study, despite the fact that both tools produce similar ratios of negative issues in line with the original study, the replication completely ignores this result because sentistrength reported more neutral issues.
+
+Overemphasis on neutral classifications also misrepresents the general use case of sentiment analysis. The general goal is to identify positive and negative statements.
+
+In general, this is an issue of recall. The authors are correct to note unbalanced classes can give unclear metrics for accuracy. But there are better ways to measure these differences then currently taken.
+
+
+* Action: As this is a systematic issue, will highlight recommendations as minor issues below, indicated by MA1.
+
+### MA2
+
+The replications raise an important issue related to potential differences results with different uses of tools. However, an important consideration is understanding what might be more robust. Given the performance of combining both tools was shown to be more effective, and that this might be a general recommendation, it would be important for readers to see the result of combining them, regardless if they produce results consistent or not with original study.
+
+* Action: Add additional analysis of sentistrength+NLTK for replication studies.
+
+### MA3
+
+Need to better motivate the section of "time to answer/close issue" as a basis for evaluating performance of sentiment analysis tools. Need to emphasize why this is a valid area of study for sentiment analysis, otherwise this is a fairly arbitary selection. The simpliest action is to include a summary of previous results [40,19] and include intuition for why we would expect to see negative or positive relations with time?
+
+But this can be a complex issue, related to "politeness"  as well as "criticality". It is not clear when sentiment analysis is sufficiently nuanced here. There are several tools that directly compute "politeness" of a message.
+
+* Software development: do good manners matter?
+https://peerj.com/preprints/1515v1/
+
+* Would you mind fixing this issue? An Empirical Analysis of Politeness and Attractiveness in Software Developed Using Agile Boards
+
+>  Our  results  show  that  the  level  of  politeness  in the communication process among developers does have an effect on the time required to  x issues and, in the majority of the analysed projects,it has a positive correlation with attractiveness of the project to both active  and  potential  developers.  The  more  polite  developers  were,  the less  time  it  took  to   x  an  issue,  and,  in  the  majority  of  the  analysed cases, the more the developers wanted to be part of project, the more they were willing to continue working on the project over time.
+
+* Action: The recommended action is to supplement the results with politeness tool results: https://github.com/sudhof/politeness
+
+### Minor Issues
+
+* Section 3 study. Why are datasets so uneven? Some have 95k issues, others include only ~400.
+
+* Section 3 study. Include summary of time to respond/close in results. There are simply no results reported in relation to the time to answer question and associated variance. Since this is the variable under study, it is important to understood the basic summary statistics.
+
+* Section 3 study. Need a better way to summarize results instead of results "don't agree". Can just be a few sentences.
+
+* MA1: In addition to ARI for first study, breakdown results into recall and precision/or F-measures for negative/pos.
+
+* MA1: The first study being replicated did not have originally have statistically significant results. No criteria for replication is provided. Given that the original finding was simply that there was "more" negative issues in security matters than non, then by that standard the replicated results should be *in support*, as they do find "more" negative issues reported in both tools.
+
+* MA1: Use mean in replication #2 overemphasizes neutral results. Would be interesting to see distribution differences in positive and negative.
+
+* A deeper investigation into the underlying differences in tools. A qualitative investigation into a random sample of disagreements in tools would help clarify to readers as to why some tools may disagree. The general message to readers should include that be there is a danger in treating the tools as black-boxes. Help the reader to understand why.
+
+
+
+Reviewer #2:
+SUMMARY OF THE PAPER:
+
+The paper examines 4 research questions to investigate sentiment polarity analysis tools. First, they examine 4 different tools to study whether they agree with the sentiment recognized by human evaluators, and among them. Then, they evaluate the impact of the sentiment analysis tool on SE studies. Finally, they observe to what extent the results of previous (published) studies can be confirmed using a different tool.
+
+
+GENERAL COMMENTS:
+
+Strengths:
+-       Paper is well written.
+
+Points for improvement:
+-       The importance of the research question is not addressed. The natural question is, how relevant is this study to SE?
+-       Some of the studies presented have important issues that are affecting the validity of results.
+-       Some presented conclusions cannot be drawn from the results. Others need to be much more explained (and/or explored) to be useful.
+In general, I would say this is a very ambitious paper. It is very broad, but it often turns out to be superficial. Next, I include some general issues. See the detailed comments section for more information.
+-       Paper goal. It is not justified why sentiment analysis tools are needed in SE. How can SE benefit from them? This is a key issue that should be addressed in the paper. If not properly justified, the paper lacks from interest for the journal readers.
+-       I see some important problems with the studies performed, which should be amended before the paper can be published. As an example: what is the impact of the manual labeling in study 1? Also, your conclusions from the second and third study cannot be drawn from the studies you have performed. For the second study you should have performed a study where cause-effect relationships can be drawn.
+-       Regarding conclusions, I still wonder why a specific SE tool should be used. You have not concluded that all of them are incorrect. Simply that they do not agree, and for the case of two of them, that the results obtained with each other do not match. However, you were not using the same data in both cases. In case a SE tool is needed, you never give any kind of insight into the characteristics it should have or the differences with the current ones it should have.
+
+
+DETAILED COMMENTS:
+
+-       Section 1. The authors have focused on explaining why it is important to compare the usage of different sentiment analysis tools. However, an essential question that remains unanswered in the paper is: what is the point of doing sentiment polarity analysis? What are the benefits that SE could get from analyzing the sentiments of software developers? How can software development be improved by doing this? This should be explained in the paper. Only if sentiment analysis is relevant to SE this empirical study makes sense.
+
+-       Section 1. Another important question that is not answered is that, since different tools differ in results, which one should be used? Which one is the most appropriate? (if any). How should researchers doing sentiment analysis in SE proceed when selecting a tool?
+
+-       Section 1. Please remove from the paper the word "experiment". Or at least specify better what you are doing. "Experiment" is typically used as a short term for "controlled experiments" and this is not done in the paper.
+
+-       Section 2. There should be an explanation of the dataset. Currently, it is not possible to assess how appropriate it is for the analyses that have been performed. Goal of original study, methodology used, etc.
+
+-       Section 2.1.1. The description of the sentiment analysis tools deserves to be in a separate section, before current section 2. It would be nice that the authors improve that section by adding some examples to better understand how the different tools behave and the nature of the differences between them. This could help them explain the empirical results obtained.
+
+-       Section 2.1.2. More details about the manual labeling should be included in order to properly interpret and explain results. The paper reads that "a text is considered as neutral when three or more evaluators have evaluated it as neutral". But no neutral emotions are listed in paragraph 1 of this section.
+
+-       Section 2.1.2. There are two issues that worry me here: 1) The manual labeling does not seem to have the same purpose as the tools. The authors of the original study do not label as: positive, negative and neutral. I wonder to what extent the labeling made by the original authors would have matched the authors', and to what extent the authors are biasing the results by interpreting the labeling of the original study. 2) A lot of data points have been removed. What conclusion should be drawn from this? I think these data points should also be studied somehow although perhaps differently.
+
+-       Section 2.1.3. The usage of ARI should be better explained and justified. It seems it has been used due to the fact that 73% of the comments have been manually labeled as neutral, but no further explanation of justification is given on how ARI would help to overcome this issue. More precise, what is the difference between using ARI and not kappa or any other agreement index when comparing tools and manual classification?
+
+-       Table 1. Why only the results of manual vs. NLTK and NLTK vs. Sentistrength are shown? All results should be shown. Additionally, no results regarding ARI analysis are shown. They should appear in the manuscript. I would suggest moving the information contained in Table 1 (completed with the information for all comparisons of tools and manually) to an appendix and add to the main text the ARI results, so that the explanation of results can be better understood.
+
+-       Section 2.2. The two research questions examined should be interpreted separately.
+
+-       Section 2.3. The discussion incorporated here does not discuss the results of the empirical study, but presents a new empirical study. However, no research questions have been presented in the paper for this study, and it has not been presented anywhere before. The paper should be changed (introduction and other sections if necessary) to include it. A discussion section should really discuss the results obtained. For example, I am missing a discussion of the nature of the discrepancies between the different tools and/or manual labeling. Is it possible to establish a pattern so that the differences in classification can be understood?
+
+-       Section 2.3. You are not combining the results of the tools. You are filtering the dataset to keep only the data in which two given tools agree.
+
+-       Section 2.3. What is your explanation for these results? In other words, what is your theory of why this is happening?
+
+-       Table 2. Same comment as for Table 1.
+
+-       Section 2.4. I totally agree with your first threat to validity, and I think it is a very dangerous one. I see to options here: 1) the authors re-classify emotions in the original dataset to obtain positive, negative and neutral, or 2) "surprise" comments are taken out of the dataset.
+
+-       Section 2.4. I do not understand the second threat. What do you mean by "document level"? According to Section 2.1.2, you are labeling comments.
+
+-       Section 3. Last sentence of first paragraph (lines 42-44), what do you mean? I do not understand.
+
+-       Section 3.1. On the one hand, you cannot claim a cause-effect relationship because of how you have designed your empirical study (for example if you were running a controlled experiment could have established cause-effect relationships). Please, state that clearly in the paper. As it is written now it is confusing. On the other hand, since you cannot establish a cause-effect relationship, you cannot claim that the sentiment analysis tools are affecting the validity of the conclusions.
+
+-       Section 3.1. The fact that NLTK and SentiStrenght were the tools with highest agreement initially does not mean that they will always be the one showing highest agreement. You have worked with one only dataset. Perhaps for a different dataset you get that two other tools are the ones showing highest agreement, or even one only tool.
+
+-       Table 3. Significance values should be included.
+
+-       Section 3.3. You cannot conclude that the sentiment analysis tool affects the conclusions when analyzing differences in the response times. Certainly, you can question the validity of results, since they are different, but since the type of study you have performed does not allow to derive cause-effect relationships (and you acknowledge this at the beginning of this section), there is nothing else you can conclude.
+
+-       Section 4.  First sentence, the tool might affect validity of SE results, or might not affect. Your study does not allow knowing whether there is a cause-effect relationship.
+
+-       Section 4.3.1. Table 4 and 5 show that the numbers differ. In this situation it would have been better to simply take the dataset and apply the two tools. I mean, not to use the results of the original experiment, but to obtain your own results in both cases and compare.
+
+-       Section 4.3.1. There are some issues from Pletea study that have not been mentioned in section 4.2.1, like the ones related to Table 8. Please, include all relevant information for the study in section 4.2.1.
+
+-       Table 8. What doest he asterisk mean in last column?
+
+-       Section 4.3.1. The conclusions regarding table 8 are very superficial. You should "dig" into possible explanations for these results. For example, in how many cases do all three agree? Is there a correct classification? (human for example). Do the discussions have special characteristics to explain differences in classification? What do you think is causing the difference in classification?
+
+-       Section 4.3.2. Same comments as per section 4.3.1 regarding differences in the number of comments identified.
+
+-       Section 4.3.2. What is the probability of the transformation having introduced a bias in the results?
+
+-       Section 4.3.2. Page 16 first paragraph. The interpretation of Table 9, 10 and 11 is totally subjective. No statistical test has been used to compare if there are statistically significant differences between the results of the original study and the replication. Therefore, your claim in Section 4.4. is not supported.
+
+-       Section 5. Related work should search for other previous works that have addressed the same or similar research questions that this paper, and the advance in the research that this paper is. As it is currently written, I doubt that this is a related work section. If no similar works have been performed, then it should be stated so, and list the most similar ones.  But the authors are consuming space that could have been used to explain some necessary issues in the paper.
+
+-       Section 5.3. Last paragraph. I doubt you can conclude that from this research, for several reasons: 1) you never showed the existence of cause-effect relationship between differences in results and tool, and 2) you never examined the correctness of results. Regarding reason 2, you are assuming that both tools were incorrect, but it could be that one of them is correct, but not the other; 3) you have not comprehensively examined ALL tools, therefore, you cannot conclude that all tools are incorrect, and a new one is needed.

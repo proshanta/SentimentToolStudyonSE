@@ -1,0 +1,150 @@
+Hi Robbert,
+
+Attached you will find the dataset.
+
+Let me know if there are issues.
+As reference take the last comment (comment N). That was the one used to decide the emotion.
+The others were used if comment N was not clear (context analysis RQ2)
+
+Finally - as you will see - the dataset is small and many emotions have not 'enough' data
+(for a decent training)
+
+Probably you can 'improve/integrate' your dataset  using extra data from these sources:
+
+- WordNet Affect: http://wndomains.fbk.eu/wnaffect.html
+- SemVal dataset (http://nlp.cs.swarthmore.edu/semeval/index.php). I recall 1000 headlines annotated with emotions.
+
+They do not refer to software artifacts - but the keywords used may have overlapping (to a certain extent)
+to the one used by developers.
+
+Regards,
+Alessandro
+
+
+
+________________________________________
+From: Serebrenik, A. [a.serebrenik@tue.nl]
+Sent: Monday, February 23, 2015 10:43 AM
+To: Murgia Alessandro; Jongeling, R.M.
+Subject: RE: Your paper on developer emotions
+
+Dear Alessandro,
+
+Thank you for your mail. It will be my pleasure to work together on the emotions, and of course, making your data publicly available via the MSR data track would be really beneficial for our community.
+
+As Robbert has mentioned at the moment we are slightly less ambitious ;-) and look merely at positivity/negativity of sentiments. While there is quite some research on this in software engineering, everybody seems to use tools that have been designed and trained on non-software engineering data, e.g., product reviews or movie reviews. Your dataset seems to be the only one that is software engineering specific (please correct me if I am wrong).
+
+Best wishes,
+Alexander
+
+________________________________
+Van: Murgia Alessandro [alessandro.murgia@uantwerpen.be]
+Verzonden: vrijdag 20 februari 2015 10:44
+Aan: Jongeling, R.M.
+CC: Serebrenik, A.
+Onderwerp: RE: Your paper on developer emotions
+
+Ok Robbert,
+
+can you keep me in the loop?
+We are doing the same (we are interested to extend our old paper)
+
+One day (with more labeled comments) we would like to submit to dataset to dataset track of MSR (today there are not many dataset of that kind)
+
+Robbert (and Alexander) do you have the same plan?
+
+> I'll retrieve and forward you the data in a following email
+
+
+Regards,
+Alessandro
+
+
+
+
+________________________________
+From: robbertjongeling@gmail.com [robbertjongeling@gmail.com] on behalf of R Jongeling [r.m.jongeling@student.tue.nl]
+Sent: Friday, February 20, 2015 10:08 AM
+To: Murgia Alessandro
+Subject: Re: Your paper on developer emotions
+
+Dear Alessandro,
+
+Thank you for your response.
+At the moment I am looking into the possibilities of training a sentiment classifier with already classified data in the software engineering domain.
+To train this the idea was to use your classifications and map the emotions to positive (love, joy, surprise) and negative (anger, sadness, fear).
+Therefore it would be great if you could share the labeled text as well, such that we can train this model.
+
+Regards,
+
+Robbert Jongeling
+
+On 20 February 2015 at 08:16, Murgia Alessandro <alessandro.murgia@uantwerpen.be<mailto:alessandro.murgia@uantwerpen.be>> wrote:
+Robbert,
+
+This is the header of CSV files you found in folders: RQ1 and RQ2
+Id      Love    Joy     Surprise        Anger   Sadness Fear
+
+This should be a starting point for your replication study.
+At the moment, I don't find the header of the other files (but it should be possible to infer their content)
+
+At the moment, what are you doing?
+Do you need the labeled text too?
+
+Regards,
+Alessandro
+
+________________________________
+From: Murgia Alessandro
+Sent: Wednesday, February 18, 2015 1:49 PM
+To: R Jongeling
+Cc: Alexander Serebrenik
+Subject: RE: Your paper on developer emotions
+
+________________________________
+Hi Robbert (and hi Alexander),
+
+We had a replication package linked to the paper - unfortunately we changed the website
+recently and several hard-coded links were broken.
+I don't find right now the link to the rep. package so I'm just sending you the one I've in my local machine.
+
+I don't recall a read me file :(
+Have a look of the file - probably you will need the header of the file (which now I don't have - I'll forward you in a second mail)
+
+
+Side note: We are continuing this experiment developing a MLC
+
+
+Regards
+Alessandro
+
+
+
+
+
+
+
+
+
+
+From: robbertjongeling@gmail.com<mailto:robbertjongeling@gmail.com> [robbertjongeling@gmail.com<mailto:robbertjongeling@gmail.com>] on behalf of R Jongeling [r.m.jongeling@student.tue.nl<mailto:r.m.jongeling@student.tue.nl>]
+Sent: Wednesday, February 18, 2015 12:21 PM
+To: Murgia Alessandro
+Cc: Alexander Serebrenik
+Subject: Your paper on developer emotions
+
+Dear Alessandro,
+
+It was nice reading your paper on emotions in software artifacts.
+We are looking into emotions in issue reports and would like to have a look at the dataset of all experiments as mentioned in your paper "Do Developers Feel Emotions? An Exploratory Analysis of Emotions in Software Artifacts".
+Is that dataset still available?
+
+looking forward to hearing from you,
+
+
+all the best,
+
+Robbert Jongeling
+
+
+P.S. Alexander says hi.

@@ -1,0 +1,12 @@
+=IF(AND((C2+D2)>=1,(E2+F2+G2)=0),"Positive",IF(AND((E2+F2+G2)>=1,(C2+D2)=0),"Negative",IF((C2+D2+E2+F2+G2)=0,"Neutral","Contradictory")))
+=IF(AND((H2+I2)>=1,(J2+K2+L2)=0),"Positive",IF(AND((J2+K2+L2)>=1,(H2+I2)=0),"Negative",IF((H2+I2+J2+K2+L2)=0,"Neutral","Contradictory")))
+=IF(AND((M2+N2)>=1,(O2+P2+Q2)=0),"Positive",IF(AND((O2+P2+Q2)>=1,(M2+N2)=0),"Negative",IF((M2+N2+O2+P2+Q2)=0,"Neutral","Contradictory")))
+=IF(AND((R2+S2)>=1,(T2+U2+V2)=0),"Positive",IF(AND((T2+U2+V2)>=1,(R2+S2)=0),"Negative",IF((R2+S2+T2+U2+V2)=0,"Neutral","Contradictory")))
+
+
+=IF(AND((C2+D2)>=1,(E2+F2+G2)=0),1,IF(AND((E2+F2+G2)>=1,(C2+D2)=0),-1,IF((C2+D2+E2+F2+G2)=0,0,2)))
+=IF(AND((H2+I2)>=1,(J2+K2+L2)=0),1,IF(AND((J2+K2+L2)>=1,(H2+I2)=0),-1,IF((H2+I2+J2+K2+L2)=0,0,2)))
+=IF(AND((M2+N2)>=1,(O2+P2+Q2)=0),1,IF(AND((O2+P2+Q2)>=1,(M2+N2)=0),-1,IF((M2+N2+O2+P2+Q2)=0,0,2)))
+
+
+=IF((B2+C2+D2+E2)>=3,"Positive",IF((B2+C2+D2+E2)<=-3,"Negative",IF(OR((B2+C2+D2+E2)=1,(B2+C2+D2+E2)=1,(B2+C2+D2+E2)=0),"Neutral","Contradictory")))

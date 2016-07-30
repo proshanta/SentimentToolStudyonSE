@@ -1,0 +1,14 @@
+
+
+
+
+
+Scatter plot: Weigheted Kappa-Total DataPoints
+
+```{r}
+mydata = read.csv("ScatterPlot.csv")
+plot(mydata$DataPoints, mydata$WeightedKappa, main="Weigheted Kappa Vs Total DataPoints", 
+    xlab="TotalDataPoints", ylab="WeightedKappa",pch=19,col="blue") 
+
+```
+

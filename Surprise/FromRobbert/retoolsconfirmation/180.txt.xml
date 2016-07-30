@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1" sentimentValue="1" sentiment="Negative">
+        <tokens>
+          <token id="1">
+            <word>Jimmy</word>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>5</CharacterOffsetEnd>
+            <POS>NNP</POS>
+          </token>
+          <token id="2">
+            <word>this</word>
+            <CharacterOffsetBegin>6</CharacterOffsetBegin>
+            <CharacterOffsetEnd>10</CharacterOffsetEnd>
+            <POS>DT</POS>
+          </token>
+          <token id="3">
+            <word>ready</word>
+            <CharacterOffsetBegin>11</CharacterOffsetBegin>
+            <CharacterOffsetEnd>16</CharacterOffsetEnd>
+            <POS>JJ</POS>
+          </token>
+          <token id="4">
+            <word>FOR</word>
+            <CharacterOffsetBegin>17</CharacterOffsetBegin>
+            <CharacterOffsetEnd>20</CharacterOffsetEnd>
+            <POS>IN</POS>
+          </token>
+          <token id="5">
+            <word>review/COMMIT</word>
+            <CharacterOffsetBegin>21</CharacterOffsetBegin>
+            <CharacterOffsetEnd>34</CharacterOffsetEnd>
+            <POS>NN</POS>
+          </token>
+          <token id="6">
+            <word>?</word>
+            <CharacterOffsetBegin>34</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>.</POS>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (FRAG
+          (NP
+          (NP (NNP Jimmy))
+          (ADJP (DT this) (JJ ready))
+          (PP (IN FOR)
+          (NP (NN review/COMMIT))))
+          (. ?)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Jimmy</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">ready</governor>
+            <dependent idx="2">this</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="1">Jimmy</governor>
+            <dependent idx="3">ready</dependent>
+          </dep>
+          <dep type="prep">
+            <governor idx="1">Jimmy</governor>
+            <dependent idx="4">FOR</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="4">FOR</governor>
+            <dependent idx="5">review/COMMIT</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Jimmy</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">ready</governor>
+            <dependent idx="2">this</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="1">Jimmy</governor>
+            <dependent idx="3">ready</dependent>
+          </dep>
+          <dep type="prep_for">
+            <governor idx="1">Jimmy</governor>
+            <dependent idx="5">review/COMMIT</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Jimmy</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">ready</governor>
+            <dependent idx="2">this</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="1">Jimmy</governor>
+            <dependent idx="3">ready</dependent>
+          </dep>
+          <dep type="prep_for">
+            <governor idx="1">Jimmy</governor>
+            <dependent idx="5">review/COMMIT</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+      <sentence id="2" sentimentValue="3" sentiment="Positive">
+        <tokens>
+          <token id="1">
+            <word>IF</word>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>IN</POS>
+          </token>
+          <token id="2">
+            <word>so</word>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>41</CharacterOffsetEnd>
+            <POS>RB</POS>
+          </token>
+          <token id="3">
+            <word>please</word>
+            <CharacterOffsetBegin>42</CharacterOffsetBegin>
+            <CharacterOffsetEnd>48</CharacterOffsetEnd>
+            <POS>VB</POS>
+          </token>
+          <token id="4">
+            <word>`</word>
+            <CharacterOffsetBegin>49</CharacterOffsetBegin>
+            <CharacterOffsetEnd>50</CharacterOffsetEnd>
+            <POS>``</POS>
+          </token>
+          <token id="5">
+            <word>submit</word>
+            <CharacterOffsetBegin>50</CharacterOffsetBegin>
+            <CharacterOffsetEnd>56</CharacterOffsetEnd>
+            <POS>VB</POS>
+          </token>
+          <token id="6">
+            <word>'</word>
+            <CharacterOffsetBegin>56</CharacterOffsetBegin>
+            <CharacterOffsetEnd>57</CharacterOffsetEnd>
+            <POS>''</POS>
+          </token>
+          <token id="7">
+            <word>.</word>
+            <CharacterOffsetBegin>57</CharacterOffsetBegin>
+            <CharacterOffsetEnd>58</CharacterOffsetEnd>
+            <POS>.</POS>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (FRAG
+          (SBAR (IN IF)
+          (S
+          (VP (RB so)
+          (VP (VB please)
+          (VP (`` `) (VB submit) ('' '))))))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">please</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="3">please</governor>
+            <dependent idx="1">IF</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">please</governor>
+            <dependent idx="2">so</dependent>
+          </dep>
+          <dep type="xcomp">
+            <governor idx="3">please</governor>
+            <dependent idx="5">submit</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">please</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="3">please</governor>
+            <dependent idx="1">IF</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">please</governor>
+            <dependent idx="2">so</dependent>
+          </dep>
+          <dep type="xcomp">
+            <governor idx="3">please</governor>
+            <dependent idx="5">submit</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">please</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="3">please</governor>
+            <dependent idx="1">IF</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">please</governor>
+            <dependent idx="2">so</dependent>
+          </dep>
+          <dep type="xcomp">
+            <governor idx="3">please</governor>
+            <dependent idx="5">submit</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+      <sentence id="3" sentimentValue="2" sentiment="Neutral">
+        <tokens>
+          <token id="1">
+            <word>Thanks</word>
+            <CharacterOffsetBegin>59</CharacterOffsetBegin>
+            <CharacterOffsetEnd>65</CharacterOffsetEnd>
+            <POS>NNS</POS>
+          </token>
+          <token id="2">
+            <word>.</word>
+            <CharacterOffsetBegin>65</CharacterOffsetBegin>
+            <CharacterOffsetEnd>66</CharacterOffsetEnd>
+            <POS>.</POS>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (NP (NNS Thanks) (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Thanks</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Thanks</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Thanks</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

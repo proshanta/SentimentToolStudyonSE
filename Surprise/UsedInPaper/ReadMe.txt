@@ -1,0 +1,1 @@
+1. We have removed surprise and contradictory comments(392-130=262).
